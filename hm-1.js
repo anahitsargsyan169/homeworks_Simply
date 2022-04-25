@@ -7,22 +7,24 @@ Array.prototype.map = null;
 
 // Implement these methods
 
-Array.prototype.find = function (cb, thisArg = this) {
-  const {length} = thisArg
+Array.prototype.find = function (cb, thisArg) {
+  if(typeof cb !== 'function') throw new TypeError('First argument is not a function')
+  const {length} = this
   for(let i = 0; i < length; i++) {
-      if(cb(thisArg[i],i,thisArg)) return thisArg[i]
+      if(cb.call(thisArg,this[i],i,this)) return this[i]
   }
 };
 
-Array.prototype.findIndex = function (cb, thisArg = this) {
-  const {length} = thisArg
+Array.prototype.findIndex = function (cb, thisArg) {
+  if(typeof cb !== 'function') throw new TypeError('First argument is not a function')
+  const {length} = this
   for(let i = 0; i < length; i++) {
-      if(cb(thisArg[i],i,thisArg)) return i;
+      if(cb.call(thisArg,this[i],i,this)) return i;
   }
   return -1;
 };
 
-Array.prototype.lastIndexOf = function (element, fromIndex = this.length) {
+Array.prototype.lastIndexOf = function (element, fromIndex = this.length-1) {
   const index = fromIndex < 0 ? this.length+fromIndex : fromIndex;
   for(let i = index; i >= 0; i--) {
       if(this[i] === element) return i
@@ -30,23 +32,26 @@ Array.prototype.lastIndexOf = function (element, fromIndex = this.length) {
   return -1;
 };
 
-Array.prototype.some = function (cb, thisArg = this) {
-  const {length} = thisArg
+Array.prototype.some = function (cb, thisArg) {
+  if(typeof cb !== 'function') throw new TypeError('First argument is not a function')
+  const {length} = this
   for(let i = 0; i < length; i++) {
-      if(cb(thisArg[i],i,thisArg)) return true;
+      if(cb.call(thisArg,this[i],i,this)) return true;
   }
   return false;
 };
 
-Array.prototype.every = function (cb, thisArg = this) {
-  const {length} = thisArg
+Array.prototype.every = function (cb, thisArg) {
+  if(typeof cb !== 'function') throw new TypeError('First argument is not a function')
+  const {length} = this
   for(let i = 0; i < length; i++) {
-      if(!cb(thisArg[i],i,thisArg)) return false;
+      if(!cb.call(thisArg,this[i],i,this)) return false;
   }
   return true;
 };
 
 Array.prototype.reduce = function (cb, initialValue) {
+  if(typeof cb !== 'function') throw new TypeError('First argument is not a function')
   let acc, startIndex;
   initialValue === undefined ? (acc = this[0], startIndex = 1) : (acc = initialValue, startIndex = 0)
   for(let i = startIndex; i< this.length; i++) {
@@ -56,6 +61,7 @@ Array.prototype.reduce = function (cb, initialValue) {
 };
 
 Array.prototype.reduceRight = function (cb, initialValue) {
+  if(typeof cb !== 'function') throw new TypeError('First argument is not a function')
   const {length} = this
   let acc, startIndex;
   initialValue === undefined ? (acc = this[length-1], startIndex = length-2) : (acc = initialValue, startIndex = length-1)
