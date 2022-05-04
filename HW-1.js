@@ -10,7 +10,7 @@ const grid1 = [
   [".", ".", ".", ".", ".", ".", ".", ".", "."],
   [".", ".", "1", ".", ".", ".", ".", ".", "."],
   [".", "6", "7", ".", ".", ".", ".", ".", "9"],
-  [".", ".", ".", ".", ".", ".", "8", "1", "."],
+  ["2", ".", ".", ".", ".", ".", "8", "1", "."],
   [".", "3", ".", ".", ".", ".", ".", ".", "6"],
   [".", ".", ".", ".", ".", "7", ".", ".", "."],
   [".", ".", ".", "5", ".", ".", ".", "7", "."],
@@ -31,42 +31,19 @@ const grid2 = [
 
 function solution(grid) {
   const {length} = grid;
-  const rows = Array.from({length},()=>[]);
-  const columns = Array.from({length},()=>[]);
-  const subGrids = Array.from({length},()=>[]);
-
-  for (let r = 0; r < length; r++) {
-    for (let c = 0; c < length; c++) {
+  const obj = {}
+  for(let r = 0; r < length; r++){
+    for(let c = 0; c < length; c++){
       const cell = grid[r][c]
       if(cell === '.') continue;
-      
-      const subIndex = Math.floor((r / 3)) * 3 + Math.floor(c / 3);
-      if (rows[r].includes(cell) || columns[c].includes(cell) || subGrids[subIndex].includes(cell)) 
-        return false
-      
-      rows[r].push(cell);
-      columns[c].push(cell);
-      subGrids[subIndex].push(cell);
+      const subGrid = Math.floor((r / 3)) * 3 + Math.floor(c / 3);
+      if(obj[`row${r} ${cell}`] || obj[`column${c} ${cell}`] || obj[`subGrid${subGrid} ${cell}`]) return false
+      obj[`row${r} ${cell}`] = true
+      obj[`column${c} ${cell}`] = true
+      obj[`subGrid${subGrid} ${cell}`] = true
     }
   }
-  return true;
-
-  // return grid.every((row,rowIndex)=>{
-  //   return row.every((_,columnIndex)=>{
-  //     const cell = grid[rowIndex][columnIndex]
-  //     if(cell === '.') return true;
-      
-  //     const subIndex = Math.floor((rowIndex / 3)) * 3 + Math.floor(columnIndex / 3);
-  //     if (rows[rowIndex].includes(cell) || columns[columnIndex].includes(cell) || subGrids[subIndex].includes(cell)) 
-  //       return false
-      
-  //     rows[rowIndex].push(cell);
-  //     columns[columnIndex].push(cell);
-  //     subGrids[subIndex].push(cell);
-  //     return true
-  //   })
-  // })
-
+  return true
 }
 
 console.log(solution(grid1)); // true
