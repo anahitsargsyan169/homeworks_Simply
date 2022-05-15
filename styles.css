@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+body{
+    background-color: rgb(31,34,36);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color:#D6DDDE
+}
+button{
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+input{
+    display: none;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
+.grid{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 22.2% 4.5% 9.5% 9.4% 27.6%;
+    width: 100%;
+}
+.container{
+    flex-direction: column;
+    margin: 0 32px 0 33px;
+}
+
+/* Header */
+
+.header{
+    justify-content: space-between;
+    height: 106px;
+}
+.header__page-name{
+    margin-top: 35px;
+    font-size: 28px;
+}
+.header__logos{
+    align-items: center;
+    gap: 32px;
+}
+.header__logos > div {
+    position: relative;
+}
+.header__logo{
+    clip-path: polygon(0 0, 0 75%, 50% 100%, 100% 75%, 100% 0, 50% 7%);
+    width: 48px;
+    height: 48px;
+    opacity: 0.25;
+}
+.free{
+    background: #499861;
+}
+.pro{
+    background: #598B8D;
+}
+.vip{
+    background: #DA9422;
+} 
+.header__logo-text{
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    width: 56px;
+    height: 20px;
+    padding: 2px;
+    opacity: 0.25;
+    background: #131718;
+    text-align: center;
+}
+.header__btn{
+    padding: 8px 20px;
+    width: 137px;
+    height: 35px;
+    background: #18A7FF;
+}
+
+/* Navigation */
+
+.nav{
+    justify-content: start;
+    gap: 63px;
+    border-bottom: 1px solid rgba(139, 144, 145, 0.25);
+}
+.nav__link{
+    text-align: center;
+    padding: 23px 12px;
+    opacity: 0.6;
+    cursor:pointer;
+}
+
+/* Section */
+
+.section{
+    width: 100%;
+    padding-top: 43px;
+}
+.section__name{
+    margin-bottom: 24px;
+}
+
+/* Table */
+
+.table{
+    display: grid;  
+    position: relative; 
+    height: 370px;
+}
+.table__head{
+    margin: 16px 0 0 0;
+    gap: 6.7%;
+    font-size: 12px;
+    line-height: 14px;
+    opacity: 0.6;
+}
+.table__row{
+    padding: 7px 0 6px;
+    background: #1A1C1E;
+    border-radius: 4px;
+    gap: 6.7%;
+    margin: 8px 0 0 0;
+}
+.table__dropdown{
+    justify-content: normal;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.sub-row {
+    width: 95.2%;
+    justify-self: end;
+    grid-template-columns: 36.9% 9.35% 53.75%;
+    gap: 0;
+}
+.table__dropdown:before{
+    position: absolute;
+    content: '';
+    left: 21px;
+    width: 6px;
+    height: 115px;
+    background: #161819;
+}
+.line:before{
+    position: absolute;
+    content: '';
+    width: 27px;
+    left: 21px;
+    height: 6px;
+    background: #161819;
+}
+.table__name{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 16px;
+}
+.table__arrow {
+    font-size: 30px;
+    padding-right: 16px;
+    padding-top: 20px;
+    text-align: center;
+}
+.table__id, .table__licenses{
+    text-align: end;
+}
+.table__date{
+    text-align: start;
+}
+.table__buttons{
+    text-align: end;
+    padding-right: 16px;
+}
+.table__add-btn {
+    background: #499861;
+    width: 113px;
+    height: 31px;
+}
+.table__remove-btn {
+    background: #CC4343;
+    width: 82px;
+    height: 31px;
+    margin-left: 15px;
+}
+.table__download-btn {
+    width: 82px;
+    height: 31px;
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+/* File input */
+
+.file-input{
+    text-align: center;
+    width: 100%;
+    height: 231px;
+    padding-top: 11px;
+    background: #16181942;
+    border: 1px dashed rgba(214, 221, 222, 0.26);
+    border-radius: 4px;
+    margin-bottom: 202px;
+}
+.file-input__arrow{
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    border: 2px solid #D6DDDE;
+    padding-top: 8.67px;
+}
+.file-input__label{
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    gap: 28px;
+}
+
+/* additional classes */
+
+.highlighted {
+    color: #18A7FF;
+}
+.activated {
+    opacity: 1;
+}
+.clicked {
+    border-bottom: 2px solid #18A7FF;
+    opacity: 1;
+}

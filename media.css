@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1065px) {
+    .table{
+        overflow-x: scroll;
+    }
+    .table__row, .table__head{
+        width: 1000px; 
+    }
+    .sub-row{
+        width: 952px; 
+    }
+
+}
+@media only screen and (max-width: 600px) {
+    .header{
+        flex-wrap: wrap;
+        justify-content: center;
+        height:auto;
+        gap: 25px;
+    }
+    .header__logos{
+        flex-wrap: wrap;
+    }
+    .nav{
+        flex-direction: column;
+        gap: 0;
+    }
+}

@@ -1,16 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./media.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Licenses</title>
 </head>
-
 <body>
-    <script src='sort.js'></script>
-    <script src='chessPlayers.js'></script>
+    <div class="container flex">
+        <header class="header flex">
+            <div class="header__page-name">Licenses</div>
+            <div class="header__logos flex">
+                <div>
+                    <div class="header__logo free activated"></div>
+                    <div class="header__logo-text free activated">FREE</div>
+                </div>
+                <div>
+                    <div class="header__logo pro"></div>
+                    <div class="header__logo-text pro">PRO</div>
+                </div>
+                <div>
+                    <div class="header__logo vip"></div>
+                    <div class="header__logo-text vip">VIP</div>
+                </div>
+                <button class="header__btn">Upgrade Now</button>
+            </div>  
+        </header>
+        <nav class="nav flex">
+            <div class="nav__link">
+                Subscription
+            </div>
+            <div class="nav__link">
+                Outright
+            </div>
+            <div class="nav__link clicked">
+                Offline Activation
+            </div>
+        </nav>
+        <main>
+            <section class="section">
+                <div class="section__name">
+                    Systems
+                </div>
+                <div class="table">
+                    <div class="table__head grid">
+                        <div class="table__name">System name</div>
+                        <div class="table__id">ID</div>
+                        <div class="table__date">Created date</div>
+                        <div class="table__licenses">Active Licenses</div>
+                    </div>
+                    <div class="table__row grid">
+                        <div class="table__name">
+                            <div class="table__arrow">&#129171;</div>
+                            <div>James-Main-MacBook</div>
+                        </div>
+                        <div class="table__id">91512</div>
+                        <div class="table__date">01 Jan 2019</div>
+                        <div class="table__licenses">2</div>
+                        <div class="table__buttons">
+                            <button class="table__add-btn">Add License</button>
+                            <button class="table__remove-btn">Remove</button>
+                        </div>
+                    </div>
+                    <div class="table__dropdown flex">
+                        <div class="table__head grid sub-row">
+                            <div class="table__name">Licenses</div>
+                            <div class="table__date">Expires</div>
+                        </div>
+                        <div class="table__row grid sub-row line">
+                            <div class="table__name">Jenkins Pro</div>
+                            <div class="table__date">Never</div>
+                            <div class="table__buttons">
+                                <button class="table__download-btn">Download</button>
+                            </div>
+                        </div>
+                        <div class="table__row grid sub-row line">
+                            <div class="table__name">Outfit Pro</div>
+                            <div class="table__date">29 Jul 2021</div>
+                            <div class="table__buttons">
+                                <button class="table__download-btn">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__head grid">
+                        <div class="table__name"></div>
+                        <div class="table__id"></div>
+                        <div class="table__date">Created date</div>
+                        <div class="table__licenses">Active Licenses</div>
+                    </div>
+                    <div class="table__row grid">
+                        <div class="table__name">
+                            <div class="table__arrow">&#129171;</div>
+                            <div>James-Laptop</div>
+                        </div>
+                        <div class="table__id">84729</div>
+                        <div class="table__date">15 Jan 2020</div>
+                        <div class="table__licenses">1</div>
+                        <div class="table__buttons">
+                            <button class="table__add-btn">Add License</button>
+                            <button class="table__remove-btn">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="section__name">
+                    Add System
+                </div>
+                <div class="file-input">
+                    <label class="file-input__label flex" for="file-input">
+                        <div class="file-input__arrow">&#129123;</div>
+                        <input id="file-input" type="file"/>
+                        <div class="file-input__text"><span class="highlighted">Choose a file</span> to upload or drag it here <br> (jpg, png, max size 5mb)</div>
+                    </label>
+                </div>
+            </section>
+        </main>
+        
+    </div>
 </body>
-
 </html>
