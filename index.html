@@ -11,135 +11,58 @@
 </head>
 <body>
     <div class="container flex">
+    </div>
+    <template class="header-temp">
         <header class="header flex">
-            <div class="header__page-name">Licenses</div>
-            <div class="header__logos flex">
-                <div>
-                    <div class="header__logo free activated"></div>
-                    <div class="header__logo-text free activated">FREE</div>
-                </div>
-                <div>
-                    <div class="header__logo pro"></div>
-                    <div class="header__logo-text pro">PRO</div>
-                </div>
-                <div>
-                    <div class="header__logo vip"></div>
-                    <div class="header__logo-text vip">VIP</div>
-                </div>
+            <div class="header__page-title"></div>
+            <div class="header__rightBlock flex">
                 <button class="header__btn">Upgrade Now</button>
             </div>  
         </header>
-        <nav class="nav flex">
-            <div class="nav__link">
-                Subscription
-            </div>
-            <div class="nav__link">
-                Outright
-            </div>
-            <div class="nav__link clicked">
-                Offline Activation
-            </div>
-        </nav>
-        <main>
-            <section class="section">
-                <div class="section__name">
-                    Systems
-                </div>
-                <div class="tb-div">
-                <table class="tb">
-                    <thead>
-                        <tr>
-                            <th class="tb__system-name">System Name</th>
-                            <th class="tb__system-id">ID</th>
-                            <th class="tb__created-date">Created date</th>
-                            <th class="tb__active-licenses">Active Licenses</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="tb__row">
-                            <td class="tb__system-name opened row-first">James-Main-MackBook</td>
-                            <td class="tb__system-id">91520</td>
-                            <td class="tb__created-date">01 Jan 2019</td>
-                            <td class="tb__active-licenses">2</td>
-                            <td class="tb__buttons">
-                                <button class="tb__add-btn">Add License</button>
-                                <button class="tb__remove-btn">Remove</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="5">
-                                <table class="sub-tb">
-                                    <thead>
-                                        <tr></tr>
-                                        <tr>
-                                            <th class="tb__system-name">Licenses</th>
-                                            <th class="tb__system-id"></th>
-                                            <th class="tb__created-date">Expires</th>
-                                            <th class="tb__active-licenses"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="tb__row">
-                                            <td class="tb__system-name  sub-first">Jenkins Pro</td>
-                                            <td class="tb__system-id"></td>
-                                            <td class="tb__created-date">Never</td>
-                                            <td class="tb__active-licenses"></td>
-                                            <td class="tb__buttons">
-                                                <button class="tb__download-btn">Download</button>
-                                            </td>
-                                        </tr>
-                                        <tr></tr>
-                                        <tr class="tb__row">
-                                            <td class="tb__system-name sub-first">Outfit Pro</td>
-                                            <td class="tb__system-id"></td>
-                                            <td class="tb__created-date">29 Jul 2021</td>
-                                            <td class="tb__active-licenses"></td>
-                                            <td class="tb__buttons">
-                                                <button class="tb__download-btn">Download</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <thead>
-                                <tr>
-                                    <th class="tb__system-name"></th>
-                                    <th class="tb__system-id"></th>
-                                    <th class="tb__created-date">Created date</th>
-                                    <th class="tb__active-licenses">Active Licenses</th>
-                                </tr>
-                            </thead>
-                        </tr>
-                        <tr class="tb__row">
-                            <td class="tb__system-name row-first">James-Laptop</td>
-                            <td class="tb__system-id">84729</td>
-                            <td class="tb__created-date">15 Jan 2020</td>
-                            <td class="tb__active-licenses">1</td>
-                            <td  class="tb__buttons">
-                                <button class="tb__add-btn">Add License</button>
-                                <button class="tb__remove-btn">Remove</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            </section>
-            <section class="section">
-                <div class="section__name">
-                    Add System
-                </div>
-                <div class="file-input">
-                    <label class="file-input__label flex" for="file-input">
-                        <div class="file-input__arrow">&#129123;</div>
-                        <input id="file-input" type="file"/>
-                        <div class="file-input__text"><span class="highlighted">Choose a file</span> to upload or drag it here<br>(jpg, png, max size 5mb)</div>
-                    </label>
-                </div>
-            </section>
-        </main>
-        
-    </div>
+    </template>
+    <template class="thead-temp">
+        <thead>
+            <tr>
+                <th class="tb__system-name">System Name</th>
+                <th class="tb__system-id">ID</th>
+                <th class="tb__date">Created date</th>
+                <th class="tb__active-licenses">Active Licenses</th>
+            </tr>
+        </thead>
+    </template>
+    <template class="tr-temp">
+        <tr class="tb__row">
+            <td class="tb__system-name row-first"></td>
+            <td class="tb__system-id"></td>
+            <td class="tb__date"></td>
+            <td class="tb__active-licenses"></td>
+            <td class="tb__buttons">
+                <button class="tb__add-btn">Add License</button>
+                <button class="tb__remove-btn">Remove</button>
+            </td>
+        </tr>
+    </template>
+    <template class="tsr-temp">
+        <tr class="tb__row">
+            <td class="tb__system-name sub-first"></td>
+            <td class="tb__system-id"></td>
+            <td class="tb__date"></td>
+            <td class="tb__active-licenses"></td>
+            <td class="tb__buttons">
+                <button class="tb__download-btn">Download</button>
+            </td>
+        </tr>
+    </template>
+    <template class="tshead-temp">
+        <thead>
+            <tr>
+                <th class="tb__system-name">Licenses</th>
+                <th class="tb__system-id"></th>
+                <th class="tb__date">Expires</th>
+                <th class="tb__active-licenses"></th>
+            </tr>
+        </thead>
+    </template>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>
