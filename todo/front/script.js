@@ -26,6 +26,7 @@ function init(){
         task.querySelector('.task__text').append(description)
         if(completed){
             task.querySelector('.task__checkbox').checked = true
+            task.querySelector('.task__edit-btn').disabled = true
             task.classList.add('completed')
         }
         task.querySelector('.task__checkbox').addEventListener('click',(e)=>{
@@ -79,6 +80,10 @@ function init(){
             const task = await res.json()
             document.getElementById(`${task.id}`).replaceWith(createTask(task))
         })
+        edit.querySelector('.task__cancel-btn').addEventListener('click',(e)=>{
+            const id = e.target.closest('.task').id
+            document.getElementById(`${task.id}`).replaceWith(createTask({description:oldTask,id}))
+        })
     }
 
     async function removeTask(id, delay){
@@ -89,12 +94,14 @@ function init(){
     async function markAsCompleted(task){
         updateTaskCompletedField(task.id, true)
         task.classList.add('completed')
+        task.querySelector('.task__edit-btn').disabled = true
         document.querySelector('.completed-tasks').append(task)
     }
 
     function markAsIncomplete(task){
         updateTaskCompletedField(task.id, false)
         task.classList.remove('completed')
+        task.querySelector('.task__edit-btn').disabled = false
         document.querySelector('.tasks').append(task)
     }
     addButton.addEventListener('click',addTask);

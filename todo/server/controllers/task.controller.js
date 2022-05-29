@@ -7,29 +7,19 @@ exports.findAll = async function (req, res) {
 };
 exports.create = async function (req, res) {
     const {description, delay} = req.body
-    if(!delay){
+    if(delay >= 120000){
+        setTimeout(()=>{
+        console.log('There are 2 minutes left until completion!!!')
+    },delay-120000)
+    }
+    setTimeout(async ()=>{
         const task = await prisma.task.create({
             data:{
                 description,
             }
         })
         res.json(task)
-    } else {
-        if(delay >= 120000){
-            setTimeout(()=>{
-            console.log('There are 2 minutes left until completion!!!')
-        },delay-120000)
-        }
-        setTimeout(async ()=>{
-            const task = await prisma.task.create({
-                data:{
-                    description,
-                }
-            })
-            res.send('Task has been added.')
-        }, delay)
-    }
-    
+    }, delay)    
 };
 exports.findById = async function (req, res) {
     const task = await prisma.task.findUnique({
@@ -41,7 +31,12 @@ exports.findById = async function (req, res) {
 };
 exports.update = async function (req, res) {
     const {description, delay} = req.body
-    if(!delay){
+    if(delay >= 120000){
+        setTimeout(()=>{
+        console.log('There are 2 minutes left until completion!!!')
+    },delay-120000)
+    }
+    setTimeout(async ()=>{
         const updateTask = await prisma.task.update({
             where:{
                 id: +req.params.id
@@ -52,29 +47,10 @@ exports.update = async function (req, res) {
             }
         })
         res.json(updateTask)
-    } else {
-        if(delay >= 120000){
-            setTimeout(()=>{
-            console.log('There are 2 minutes left until completion!!!')
-        },delay-120000)
-        }
-        setTimeout(async ()=>{
-            const updateTask = await prisma.task.update({
-                where:{
-                    id: +req.params.id
-                },
-                data:{
-                    description,
-                    completed:false
-                }
-            })
-            res.json(updateTask)
-        },delay)
-    }
+    },delay)
 };
 exports.updateCompleted = async function (req, res) {
     const {completed} = req.body
-    console.log(completed)
     const updateTask = await prisma.task.update({
         where:{
             id: +req.params.id
@@ -87,26 +63,17 @@ exports.updateCompleted = async function (req, res) {
 };
 exports.delete = async function (req, res) {
     const {delay} = req.body
-    if(!delay){
+    if(delay >= 120000){
+        setTimeout(()=>{
+        console.log('There are 2 minutes left until completion!!!')
+    },delay-120000)
+    }
+    setTimeout(async ()=>{
         const deleteTask = await prisma.task.delete({
             where: {
                 id: +req.params.id
             }
         })
         res.json(deleteTask)
-    } else {
-        if(delay >= 120000){
-            setTimeout(()=>{
-            console.log('There are 2 minutes left until completion!!!')
-        },delay-120000)
-        }
-        setTimeout(async ()=>{
-            const deleteTask = await prisma.task.delete({
-                where: {
-                    id: +req.params.id
-                }
-            })
-            res.json(deleteTask)
-        }, delay)
-    }
+    }, delay)
 };
