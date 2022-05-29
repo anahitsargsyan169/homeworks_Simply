@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto";
+    background: #e3e6f1;
+    color: rgb(99, 99, 99);
+    background: rgb(99, 99, 99);
+}
+button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    padding-top: 5px;
+    border-radius: 4px;
+    position: relative;
+}
+input[type="text"] {
+    height: 40px;
+    width: 50vw;
+    outline: none;
+    border: 0;
+    padding: 10px;
+    color: rgb(99, 99, 99);
+}
+span {
+    overflow-wrap: anywhere;
+}
+img {
+    width: 20px;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type="datetime-local"] {
+    width: 0;
+    border: none;
+    visibility: hidden;
+    padding: 0;
+    height: 20px;
+}
+@keyframes show {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.container {
+    flex-direction: column;
+}
+.title {
+    text-align: center;
+    color: white;
+}
+.add__input {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.add__input:focus {
+    padding-left: 25px;
+    border: 2px solid #4bae4f;
+}
+.add__button {
+    height: 40px;
+    width: 40px;
+    background-color: #4bae4f;
+    color: white;
+    font-size: 31px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.add__button:hover {
+    opacity: 0.7;
+}
+.tasks {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.task {
+    align-items: center;
+    justify-content: space-between;
+    width: 70vw;
+    background: rgb(248, 248, 248);
+    margin-bottom: 10px;
+    border-radius: 4px;
+    padding: 5px;
+    padding-left: 20px;
+    gap: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    /* animation-name: show;
+    animation-duration: 1s;
+    animation-timing-function: ease; */
+}
+.task:hover {
+    background-color: #e2e2e2;
+    color: white;
+}
+.task__edit-btn:hover {
+    background-color: #4bae4f;
+}
+.task__save-btn:hover {
+    background-color: #4bae4f;
+}
+.task__cancel-btn:hover {
+    background-color: #636363;
+}
+.task__delete-btn:hover {
+    background-color: rgb(223, 0, 0);
+}
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.removed {
+    transform: scale(0);
+    transition-duration: 1s;
+}

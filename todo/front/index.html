@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Todo List</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container flex">
+            <h1 class="title">To Do List</h1>
+            <div class="add flex">
+                <input
+                    class="add__input"
+                    type="text"
+                    placeholder="Add task..."
+                />
+                <button class="add__button">+</button>
+                <input class="datetime-input" type="datetime-local" />
+                <button class="task__date-btn">
+                    <img src="./images/date.png" />
+                </button>
+            </div>
+
+            <div class="tasks flex"></div>
+            <div class="completed-tasks tasks flex"></div>
+        </div>
+        <template class="task-temp">
+            <div class="task flex">
+                <input class="task__checkbox" type="checkbox" />
+                <span class="task__text"></span>
+                <button class="task__edit-btn">
+                    <img src="./images/pen.png" />
+                </button>
+            </div>
+        </template>
+        <template class="edit-temp">
+            <div class="task flex">
+                <input class="edit__input" type="text" />
+                <div>
+                    <button class="task__save-btn">
+                        <img src="./images/save.png" />
+                    </button>
+                    <button class="task__delete-btn">
+                        <img src="./images/delete.png" />
+                    </button>
+                    <input class="datetime-input" type="datetime-local" />
+                    <button class="task__date-btn">
+                        <img src="./images/date.png" />
+                    </button>
+                    <button class="task__cancel-btn">
+                        <img src="./images/cancel.png" />
+                    </button>
+                </div>
+            </div>
+        </template>
+    </body>
+    <script type="module" src="script.js"></script>
+</html>
