@@ -88,7 +88,9 @@ function init(){
 
     async function removeTask(id, delay){
         await deleteTask(id, delay)
-        document.getElementById(`${id}`).remove()
+        document.getElementById(`${id}`).classList.add('removed')
+        setTimeout(()=>document.getElementById(`${id}`).remove(),600)
+        
     }
 
     async function markAsCompleted(task){
